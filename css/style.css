@@ -18,6 +18,8 @@ header h1 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
 
     position: absolute;
     top: 50%;
