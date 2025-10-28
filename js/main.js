@@ -1,4 +1,7 @@
 'use strict'
+var gTimeOut
+var gInterval
+var gCycleCount = 0
 
 function onBallClick(elBall, maxSize = 500) {
     var currWidth = elBall.offsetWidth
@@ -71,3 +74,35 @@ function onResetGame() {
     elBall2.setAttribute('onclick', `onBallClick(this, 300)`)
 }
 
+function onBall6MouseOver() {
+    if (gTimeOut) clearTimeout(gTimeOut)
+    gTimeOut = setTimeout(() => {
+        gCycleCount = 0
+        gInterval = setInterval(autoClickBalls, 2000)
+        console.log('Interval started.')
+    }, 2000)
+}
+
+function onBall6MouseOut() {
+    if (gTimeOut) clearTimeout(gTimeOut)
+    if (gInterval) clearInterval(gInterval)
+    gCycleCount = 0
+}
+
+function autoClickBalls() {
+    if (gCycleCount >= 10) {
+        clearInterval(gInterval)
+        return
+    }
+    gCycleCount++
+    var elBall1 = document.querySelector('.ball1')
+    var elBall2 = document.querySelector('.ball2')
+    var elBall3 = document.querySelector('.ball3')
+    var elBall4 = document.querySelector('.ball4')
+    var elBall5 = document.querySelector('.ball5')
+    elBall1.click()
+    elBall2.click()
+    elBall3.click()
+    elBall4.click()
+    elBall5.click()
+}
