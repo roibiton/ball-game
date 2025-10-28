@@ -41,3 +41,10 @@ header h1 {
     left: 70%;
     translate: -70% -70%;
 }
+
+.ball4 {
+    background-color: purple;
+    top: 30%;
+    left: 70%;
+    translate: -30% -70%;
+}
