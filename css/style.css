@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body {
     background-color: black;
 }
@@ -8,6 +11,10 @@ header h1 {
 
 .ball {
     background-color: brown;
+    color: white;
+    display: grid;
+    align-items: center;
+    justify-items: center;
     width: 100px;
     height: 100px;
     border-radius: 50%;
