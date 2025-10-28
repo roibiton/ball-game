@@ -34,3 +34,10 @@ header h1 {
     left: 30%;
     translate: -30% -30%;
 }
+
+.ball3 {
+    background-color: green;
+    top: 70%;
+    left: 70%;
+    translate: -70% -70%;
+}
