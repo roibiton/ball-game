@@ -55,3 +55,19 @@ function onBackgroundChange() {
     document.body.style.backgroundColor = randColor
     // document.querySelector('body').style.backgroundColor = randColor
 }
+
+function onResetGame() {
+    var elBalls = document.querySelectorAll('.ball')
+    elBalls.forEach(elBall => {
+        elBall.style.width = 100 + 'px'
+        elBall.style.height = 100 + 'px'
+        elBall.innerText = 100
+    })
+    var elBody = document.querySelector('body')
+    elBody.style.backgroundColor = 'black'
+    var elBall1 = document.querySelector('.ball1')
+    elBall1.setAttribute('onclick', `onBallClick(this, 500)`)
+    var elBall2 = document.querySelector('.ball2')
+    elBall2.setAttribute('onclick', `onBallClick(this, 300)`)
+}
+
