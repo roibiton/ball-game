@@ -1,6 +1,6 @@
 'use strict'
 var gTimeOut
-function onBallClick(elBall) {
+function onBallClick(elBall,maxSize) {
     if (gTimeOut) clearTimeout(gTimeOut)
     var currWidth = elBall.offsetWidth
     var currHeight = elBall.offsetHeight
@@ -10,7 +10,7 @@ function onBallClick(elBall) {
     elBall.style.height = (currHeight + randNum) + 'px'
     elBall.style.backgroundColor=randColor
     gTimeOut = setTimeout(() => {
-        if (elBall.offsetWidth >= 400 || elBall.offsetHeight >= 400) {
+        if (elBall.offsetWidth >= maxSize || elBall.offsetHeight >= maxSize) {
             elBall.style.width = 100 + 'px'
             elBall.style.height = 100 + 'px'
             elBall.innerText=100
