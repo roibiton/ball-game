@@ -11,7 +11,6 @@ header h1 {
 }
 
 .ball {
-    background-color: brown;
     color: white;
     display: grid;
     align-items: center;
@@ -26,6 +25,9 @@ header h1 {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+}
+.ball1 {
+    background-color: red;
 }
 
 .ball2 {
