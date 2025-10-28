@@ -1,7 +1,6 @@
 'use strict'
-var gTimeOut
+
 function onBallClick(elBall, maxSize = 500) {
-    if (gTimeOut) clearTimeout(gTimeOut)
     var currWidth = elBall.offsetWidth
     var currHeight = elBall.offsetHeight
     var randNum = getRandomInt(20, 61)
@@ -9,7 +8,7 @@ function onBallClick(elBall, maxSize = 500) {
     elBall.style.width = (currWidth + randNum) + 'px'
     elBall.style.height = (currHeight + randNum) + 'px'
     elBall.style.backgroundColor = randColor
-    gTimeOut = setTimeout(() => {
+    setTimeout(() => {
         if (elBall.offsetWidth >= maxSize || elBall.offsetHeight >= maxSize) {
             elBall.style.width = 100 + 'px'
             elBall.style.height = 100 + 'px'
@@ -31,7 +30,7 @@ function onClickChanger() {
         onBallClick(elBall, prevOnClickLimit)
     }, 1000)
 }
-function onClickMaxSizeChanger() {
+function onReduceBallsLimit() {
     var randReducer = getRandomInt(20, 61)
     var elBall1 = document.querySelector('.ball1')
     var elBall2 = document.querySelector('.ball2')
@@ -49,4 +48,10 @@ function onClickMaxSizeChanger() {
     if (newMaxSize2 < 100) newMaxSize2 = 100
     elBall2.setAttribute('onclick', `onBallClick(this, ${+newMaxSize2})`)
     console.log(`Ball 2 max size changed to: ${newMaxSize2}`)
+}
+
+function onBackgroundChange() {
+    var randColor = getRandomColor()
+    document.body.style.backgroundColor = randColor
+    // document.querySelector('body').style.backgroundColor = randColor
 }

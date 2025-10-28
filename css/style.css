@@ -48,3 +48,9 @@ header h1 {
     left: 70%;
     translate: -30% -70%;
 }
+.ball5 {
+    background-color: orange;
+    top: 70%;
+    left: 30%;
+    translate: -70% -30%;
+}
